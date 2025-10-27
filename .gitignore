@@ -534,3 +534,79 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# QT creator
+.qtcreator/
+# This file is used to ignore files which are generated
+# ----------------------------------------------------------------------------
+
+*~
+*.autosave
+*.a
+*.core
+*.moc
+*.o
+*.obj
+*.orig
+*.rej
+*.so
+*_pch.h.cpp
+*_resource.rc
+*.qm
+.#*
+*.*#
+core
+!core/
+tags
+.DS_Store
+*.debug
+Makefile*
+*.prl
+*.app
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Thumbs.db
+
+# qtcreator generated files
+*.pro.user*
+*.qmlproject.user*
+*.pluginspec
+src/app/Info.plist
+src/app/app_version.h
+src/libs/utils/app_version.h
+src/plugins/coreplugin/ide_version.h
+share/qtcreator/externaltools
+
+# xemacs temporary files
+*.flc
+
+# Vim temporary files
+.*.swp
+
+# Visual Studio generated files
+*.ib_pdb_index
+*.idb
+*.ilk
+*.pdb
+*.sln
+*.suo
+*.vcproj
+*vcproj.*.*.user
+*.ncb
+
+# MinGW generated files
+*.Debug
+*.Release
+
+build
+debug
+lib/*
+lib64/*
+release
+doc/html/*
+doc/html-dev/*
+doc/api/html/*
+doc/pluginhowto/html/*
+.rcc
+.pch
