@@ -6,8 +6,9 @@ namespace Config {
     // Window settings
     constexpr int WINDOW_RENDER_WIDTH = 800;    // Logical window size
     constexpr int WINDOW_RENDER_HEIGHT = 600;
-    constexpr int SIMULATION_WIDTH = 2400;      // Physical size (3x for DPI scaling)
-    constexpr int SIMULATION_HEIGHT = 1800;
+    constexpr int DPI = 3;			// DPI pixel density
+    constexpr int SIMULATION_WIDTH = WINDOW_RENDER_WIDTH*DPI;
+    constexpr int SIMULATION_HEIGHT = WINDOW_RENDER_HEIGHT*DPI;
     constexpr int UI_WIDTH = 300;
     constexpr int WINDOW_WIDTH = WINDOW_RENDER_WIDTH + UI_WIDTH;
     constexpr int WINDOW_HEIGHT = WINDOW_RENDER_HEIGHT;
