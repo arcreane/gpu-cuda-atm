@@ -77,8 +77,8 @@ void GPUPhysicsEngine::allocateDeviceMemory(int count) {
     CUDA_CHECK(cudaMalloc(&m_d_collisionCount, sizeof(int)));
 
     // Allocate grid
-    int gridWidth = static_cast<int>(std::ceil(Config::RENDER_WIDTH / (float)Config::GRID_CELL_SIZE));
-    int gridHeight = static_cast<int>(std::ceil(Config::RENDER_HEIGHT / (float)Config::GRID_CELL_SIZE));
+    int gridWidth = static_cast<int>(std::ceil(Config::SIMULATION_WIDTH / (float)Config::GRID_CELL_SIZE));
+    int gridHeight = static_cast<int>(std::ceil(Config::SIMULATION_HEIGHT / (float)Config::GRID_CELL_SIZE));
     m_deviceGrid->cellSize = Config::GRID_CELL_SIZE;
     allocateGrid(*m_deviceGrid, gridWidth, gridHeight, count);
 
@@ -237,8 +237,8 @@ void GPUPhysicsEngine::update(std::vector<Particle>& particles,
     deviceParams.mouseInArea = mouse.isInRenderArea;
     deviceParams.mouseLeftButton = mouse.leftButtonDown;
     deviceParams.mouseRightButton = mouse.rightButtonDown;
-    deviceParams.width = Config::RENDER_WIDTH;
-    deviceParams.height = Config::RENDER_HEIGHT;
+    deviceParams.width = Config::SIMULATION_WIDTH;
+    deviceParams.height = Config::SIMULATION_HEIGHT;
 
     // Réinitialise le compteur de collisions sur GPU (cudaMemset est plus rapide que cudaMemcpy)
     CUDA_CHECK(cudaMemset(m_d_collisionCount, 0, sizeof(int)));
